@@ -1,0 +1,5 @@
+git config --global alias.change-commits '!'"f() { VAR=\$1; OLD=\$2; NEW=\$3; shift 3; git filter-branch --env-filter \"if [[ \\\"\$\`echo \$VAR\`\\\" = '\$OLD' ]]; then export \$VAR='\$NEW'; fi\" \$@; }; f"
+
+git change-commits GIT_AUTHOR_NAME "Junichi Kato" "Ricardo Rengifo"
+
+git change-commits GIT_AUTHOR_EMAIL "Junichi Kato" "rengifor281@gmail.com"
